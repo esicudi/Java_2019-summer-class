@@ -8,7 +8,7 @@ package ch01;
  * 	2. 플랫폼의 독립성
  * 		C/C++: window 코드 -> 리눅스, MAC 등 다른 운영체제에서 사용 불가
  * 		Java: OS, 하드웨어에 상관없이 어디서나 동일하게 실행
- * 			프로그램 처리, 실행: JVM(Java verture Machine)이 대신 처리/실행
+ * 			프로그램 처리, 실행: JVM(Java virtual Machine)이 대신 처리/실행
  * 		source code(.java)---컴파일러-->binary code(.class)
  * 
  * 	프로그래밍 표기/작성

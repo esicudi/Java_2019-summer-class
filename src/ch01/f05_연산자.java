@@ -10,6 +10,11 @@ package ch01;
  * 			double->int: 소수점만 없어짐
  * 
  * 	연산자
+ * 		논리 연산자
+ * 			!(NOT), ||(OR), &&(AND)
+ * 			비교연산자와 많이 이용된다.
+ * 		조건연산자(삼항연산자)
+ * 			(논리 값으로 된 식 또는 값)?(true일 때 값):(false일 때 값);
  * 		
  */
 
@@ -35,6 +40,15 @@ public class f05_연산자 {
 		
 		System.out.println(shiftNum >> 1);
 		System.out.println(shiftNum >>> 1);
+		
+		int randomNum = 750;
+		System.out.println(randomNum < 300 || randomNum > 600);
+		System.out.println(randomNum > 300 && randomNum < 600);
+		
+		String res1 = 10>5 ? "big" : "small";
+		System.out.println("result: " + res1);
+		String res2 = (randomNum > 300 && randomNum < 600) ? "in range" : "out of range";
+		System.out.println("result: " + res2);
 		
 	}
 

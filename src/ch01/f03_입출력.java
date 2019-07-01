@@ -56,9 +56,13 @@ public class f03_¿‘√‚∑¬ {
 		int num3 = sc.nextInt();
 		System.out.println("num3: " + num3);
 		
-		sc.nextInt();
+		sc.nextLine();
 		String str1 = sc.nextLine();
 		System.out.println("str1: " + str1);
+		
+		System.out.println("re");
+		String str2 = sc.nextLine();
+		System.out.println(str2.getBytes());
 		
 		sc.close();
 	}
