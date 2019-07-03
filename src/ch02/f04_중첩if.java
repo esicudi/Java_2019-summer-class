@@ -40,22 +40,27 @@ public class f04_ÁßÃ¸if {
 			if(x > z) {
 				if(y > z)	//xyz
 					System.out.println("y " + y);
-				else	//xzy
+				else		//xzy
 					System.out.println("z " + z);
 			}
-			else	//zxy
+			else			//zxy
 				System.out.println("x " + x);
 		}
 		else {
 			if(y > z) {
 				if(x > z)	//yxz
 					System.out.println("x " + x);
-				else	//yzx
+				else		//yzx
 					System.out.println("z " + z);
 			}
-			else	//zyx
+			else			//zyx
 				System.out.println("y " + y);
 		}
+		
+		int max = x>y ? x : y;
+		int min = x>y ? y : x;
+		max = z>max ? max : (min>z ? min : z);
+		System.out.println(max);
 		
 		sc.close();
 	}
