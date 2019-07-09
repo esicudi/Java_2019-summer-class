@@ -24,9 +24,11 @@ public class File0_Problem_02 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.print("총 인원수를 입력하세요: ");
 		int n = sc.nextInt();
 		pirintTutorial(n);
 		
+		System.out.println("김지민과 임한수의 번호를 입력하세요:");
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 		a--;b--;
