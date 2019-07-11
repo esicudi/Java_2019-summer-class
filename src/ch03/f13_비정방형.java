@@ -1,7 +1,6 @@
 package ch03;
 
 public class f13_비정방형 {
-
 	public static void main(String[] args) {
 		int intArr[][]=new int[3][];
 		intArr[0]=new int[5];

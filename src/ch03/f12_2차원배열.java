@@ -11,6 +11,7 @@ public class f12_2차원배열 {
 //		int[][] intArr2= {{1,2,3},{4,5,6},{7,8,9}};
 //		System.out.println(intArr2[2][1]);
 		
+		
 		int intarr[][]=new int[4][5];
 		for(int i=0,count=1;i<intarr.length;i++) {
 			for(int j=0;j<intarr[i].length;j++)

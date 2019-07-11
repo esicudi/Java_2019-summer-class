@@ -1,4 +1,7 @@
 package ch03;
+
+import java.util.Scanner;
+
 /*
  * 두 자연수를 입력 받아 곱한 수의 결과 값을 구합니다.
  * 
@@ -12,8 +15,16 @@ package ch03;
 public class File0_Problem_03 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int n[]=new int[10];
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt()*sc.nextInt();
+		while(a!=0) {
+			n[a%10]++;
+			a/=10;
+		}
+		for(int i=0;i<10;i++)
+			System.out.println(n[i]);
+		sc.close();
 	}
 
 }

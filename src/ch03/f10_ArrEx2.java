@@ -3,7 +3,6 @@ package ch03;
 import java.util.Scanner;
 
 public class f10_ArrEx2 {
-
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();

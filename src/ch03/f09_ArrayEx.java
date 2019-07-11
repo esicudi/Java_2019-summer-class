@@ -3,7 +3,6 @@ package ch03;
 import java.util.Scanner;
 
 public class f09_ArrayEx {
-
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		int intArr[]=new int [10];
