@@ -17,7 +17,6 @@ public class File0_Problem_01 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("배달해야 할 양을 입력하세요(kg): ");
 		int n = sc.nextInt();
 		int t = 0, f = n/5;
 		int s = (t*3) + (f*5);
@@ -25,8 +24,9 @@ public class File0_Problem_01 {
 			if(s<n) t++;
 			else f--;
 			s = (t*3) + (f*5);
+			if(f<0) {t=0;break;}
 		}
-		System.out.println("3kg: "+ t + " 5kg: " + f);
+		System.out.println(t+f);
 		
 		sc.close();
 	}
