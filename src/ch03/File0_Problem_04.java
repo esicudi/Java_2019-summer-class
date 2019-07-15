@@ -1,4 +1,7 @@
 package ch03;
+
+import java.util.Scanner;
+
 /*
  * 3052
  * 두 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다. 
@@ -9,6 +12,14 @@ package ch03;
 
 public class File0_Problem_04 {
 	public static void main(String[] args) {
-
+		Scanner sc=new Scanner(System.in);
+        int a[]=new int[42];
+        int n=0;
+        for(int i=0;i<10;i++)
+            a[sc.nextInt()%42]=1;
+        for(int i=0;i<42;i++)
+            n+=a[i];
+        System.out.println(n);
+        sc.close();
 	}
 }
