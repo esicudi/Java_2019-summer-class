@@ -36,4 +36,11 @@ public class Student {
 	public void sleep() {
 		System.out.println(name+"("+grade+") sleep");
 	}
+	public void feedAnimal(int feed,String name) {
+		System.out.println(name+"µøπ∞ø°∞‘ "+feed+"∏∏≈≠ ∏‘¿Ã∏¶ ¡‹");
+	}
+	public int feedAnimal(int feed,Animal a1) {
+		System.out.println(a1.name+"«—≈◊ "+feed+"∏∏≈≠ ∏‘¿Ã∏¶ ¡‹");
+		return a1.eat(feed);
+	}
 }

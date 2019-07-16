@@ -22,12 +22,15 @@ public class Animal {
 	public Animal(String kind,String name) {
 		this.kind=kind;
 		this.name=name;
-		System.out.println(kind+"¿Œ "+name);
 	}
 	
 	public int eat(int food) {
 		System.out.println(name+": π‰ ∏‘±‚");
 		food-=10;
 		return food;
+	}
+	
+	public void eat() {
+		System.out.println("I'm starving.");
 	}
 }
