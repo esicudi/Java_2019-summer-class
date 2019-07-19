@@ -9,6 +9,11 @@ package ch05_class;
  * 	attack
  */
 public class Monster extends Unit{
+	public Monster() {}
+	public Monster(String name,int hp,int damage) {
+		super(name,hp,damage);
+	}
+	
 	public void attack() {
 		
 	}
