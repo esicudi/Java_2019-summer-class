@@ -19,4 +19,9 @@ public class Unit {
 		this.hp = hp;
 		this.damage = damage;
 	}
+	
+	public void setHP(int damage,Unit u) {
+		hp-=damage;
+		System.out.println();
+	}
 }

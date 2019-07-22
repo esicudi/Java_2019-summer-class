@@ -25,4 +25,9 @@ public class Student extends Person{
 	public String toString() {
 		return name+" : "+age;
 	}
+	
+	public void sleep() {
+		System.out.println("잠 안자고 공부하기");
+		super.sleep();
+	}
 }
