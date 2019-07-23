@@ -1,11 +1,25 @@
 package ch05_class2;
 
-public class Phone2 extends Function{
+import java.util.ArrayList;
+
+public class Phone2 implements MP3,Call,SMS{
 
 	@Override
-	public void MP3() {
+	public void sendSMS(String message) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void recive(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String printSMS() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -15,15 +29,33 @@ public class Phone2 extends Function{
 	}
 
 	@Override
-	public void SMS() {
+	public void recive() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Network() {
+	public void printUserInformation() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	@Override
+	public void play() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ArrayList<String> getSongList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
