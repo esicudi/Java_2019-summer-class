@@ -26,7 +26,7 @@ public class F05_StringAppend {
 		start=System.currentTimeMillis();
 		
 		for(int i=0;i<200000;i++) {
-			sb.append("a");
+			sb.append("a").append(" ");
 		}
 		System.out.println(System.currentTimeMillis()-start);
 	}
