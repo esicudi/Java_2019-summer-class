@@ -7,6 +7,7 @@ public class F00_Problem_05 {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		int t=sc.nextInt();
+		sc.nextLine();
 		StringBuilder sb=new StringBuilder();
 		while(t-->0){
 			StringTokenizer st=new StringTokenizer(sc.nextLine());
