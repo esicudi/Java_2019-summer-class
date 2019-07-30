@@ -3,7 +3,7 @@ package ch07;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class F04_Collactions {
+public class F04_Collections {
 	public static void main(String[] args) {
 		ArrayList<Integer> list=new ArrayList<>();
 		

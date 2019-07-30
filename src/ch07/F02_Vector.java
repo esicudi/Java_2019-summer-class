@@ -7,7 +7,7 @@ public class F02_Vector {
 	 * Vector<E>
 	 */
 	public static void main(String[] args) {
-		//Integer 타입 객체가 저장도는 컬렉션
+		//Integer 타입 객체가 저장되는 컬렉션
 		Vector<Integer> vector=new Vector<Integer>();
 		//데이터 추가
 		vector.add(10);
