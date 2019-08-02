@@ -10,9 +10,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 /*
  * 파일 입출력 (File IO)
@@ -96,11 +98,16 @@ import java.nio.file.Paths;
  *   - FileOutputStream
  *   - OutputStreamWriter
  *   - BufferedWriter
-        File file = new File("C:/work/sample.txt");
+ *   		File file = new File("./work/sample.txt");
 		BufferedWriter writer = null;
 		try {
+			// FileOutputStream(File file,boolean append)
+			// append default value=false
+			// 이어쓰기: true
 			writer = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream(file),"UTF-8"));
+			
+			writer.write("Hello");
 			writer.append("test");
 			writer.newLine();
 			writer.append("test2");
@@ -159,7 +166,7 @@ import java.nio.file.Paths;
  * 
  * 텍스트 파일 읽어 들이기  
  *  자바 7 이후의 방법
- *   - try-with-resource 구문
+ *   - try-resource-with 구문
  *   - Path 클래스
  *   - BufferedReader
  *   - Files 클래스의  newBufferedReader 메소드
@@ -207,37 +214,28 @@ import java.nio.file.Paths;
  */
 public class F03_FileIO {
 	public static void main(String[] args) {
-//		File file1=new File("C:/Users/Administrator/Desktop/김효경/aaa.txt");
-//		File file2=new File("./aaa.txt");
-//		File file3=new File(".");
-//		for(String file:file3.list()) {
-//			System.out.println(file);
-//		}
-		File file = new File("./work/sample.txt");
-		BufferedWriter writer = null;
-		try {
-			writer = new BufferedWriter(new OutputStreamWriter(
-					new FileOutputStream(file),"UTF-8"));
-			
-			writer.write("Hello");
-			writer.append("test");
+		Path path = Paths.get("./work/sample.txt");
+
+		try(BufferedReader reader = 
+				Files.newBufferedReader(path, StandardCharsets.UTF_8);
+				BufferedWriter writer=Files.newBufferedWriter(path, StandardCharsets.UTF_8,StandardOpenOption.APPEND)) {
+			for(String line; (line = reader.readLine()) != null; ) {
+				System.out.println(line);
+			}
 			writer.newLine();
-			writer.append("test2");
-		}catch(UnsupportedEncodingException e ) {
-			System.err.println(e);
-		}catch(FileNotFoundException e) {
-			System.err.println(e);
+			writer.append("path String");
+			writer.newLine();
+			writer.flush();
+			
+			System.out.println(path.toString());
+			System.out.println(path.toAbsolutePath());
+			System.out.println(path.toAbsolutePath().normalize());
+			File file=path.toFile();
+			System.out.println(path.getParent().getParent().toAbsolutePath().normalize());
+			System.out.println(path.startsWith("./work"));
+			System.out.println(path.endsWith("sample.txt"));
 		}catch(IOException e) {
 			System.err.println(e);
-		}finally {
-			if(writer != null) {
-				try {
-					writer.close();
-				} catch (IOException e) {
-					System.err.println(e);
-				}
-			}
 		}
-
 	}
 }
