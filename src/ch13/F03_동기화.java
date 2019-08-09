@@ -3,15 +3,14 @@ package ch13;
 //공유 데이터에 10씩 더하는 스레드
 class AddClass extends Thread{
 	static int num=0;
-	String name;
 	AddClass(String name){
-		this.name=name;
+		super(name);
 	}
 	@Override
 	public void run() {
 		for(int i=0;i<10;i++) {
 			add(10);
-			System.out.println(name+":"+num);
+			System.out.println(Thread.currentThread().getName()+":"+num);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -20,7 +19,9 @@ class AddClass extends Thread{
 			}
 		}
 	}
-	public synchronized void add(int a) {
+	// static 멤버는 공용 멤버
+	// 메소드에 동기화를 적용
+	synchronized public static void add(int a) {
 		num+=a;
 	}
 }
@@ -28,9 +29,11 @@ class AddClass extends Thread{
 public class F03_동기화 {
 	/*
 	 * 동기화
+	 * 	다수의 스레드가 공유 데이터를 순차적으로 접근하기 위해서 사용
 	 * 키워드: synchronized	=> 한 스레드만 사용할 수 있음.
 	 * 메소드: wait, notify	=> wait() : 기다리다가 누가 notify또는 아무도 사용안할 경우엔 해제
 	 * 						=> notify() : 자원을 사용하지 않겠다. 다음에 누가 써라!
+	 * 						=> synchronized 블록 안에 있어야 함
 	 * 클래스: semaphore	=> 접근 허용의 수를 제한할 수 있음.
 	 * 
 	 * synchronized 을 이용한동기화
